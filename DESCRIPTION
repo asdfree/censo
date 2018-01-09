@@ -1,0 +1,12 @@
+Package: censo
+Type: Package
+Title: censo
+Version: 0.1.0
+Author: Anthony Joseph Damico
+Maintainer: Anthony Joseph Damico <ajdamico@gmail.com>
+Description: A continuous integration package, tested on ajdamico/asdfree commit 5d25e4995d21b8de7557aa85273ea2df6e364389 ajdamico/lodown commit a1f025449cfe7d076f2abccc278f1492c88132d8
+License: GPL-3
+Imports: DBI, RSQLite, survey, convey, lodown
+Encoding: UTF-8
+LazyData: true
+Remotes: ajdamico/lodown
