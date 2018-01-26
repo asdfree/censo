@@ -137,13 +137,4 @@ sub_censo_design <-
 	subset( censo_design , v6531 >= 0 )
 
 svygini( ~ v6531 , sub_censo_design , na.rm = TRUE )
-library(dbplyr)
-library(srvyr)
-censo_srvyr_design <- as_survey( censo_design )
-censo_srvyr_design %>%
-	summarize( mean = survey_mean( v6033 ) )
-
-censo_srvyr_design %>%
-	group_by( state_name ) %>%
-	summarize( mean = survey_mean( v6033 ) )
 
