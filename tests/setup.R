@@ -2,8 +2,19 @@ if ( .Platform$OS.type == 'windows' ) memory.limit( 256000 )
 
 options("lodown.cachaca.savecache"=FALSE)
 
+this_sample_break <- Sys.getenv( "this_sample_break" )
+
 library(lodown)
-lodown( "censo" , output_dir = file.path( getwd() ) )
+
+censo_cat <-
+	get_catalog( "censo" ,
+		output_dir = file.path( getwd() ) )
+
+censo_cat <- censo_cat[ split( seq( nrow( censo_cat ) ) , 1 + sort( seq( nrow( censo_cat ) ) %% 55 ) )[[ this_sample_break ]] , ]
+
+lodown( "censo" , censo_cat )
+
+if( FALSE ){
 library(lodown)
 # examine all available CENSO microdata files
 censo_cat <-
@@ -138,3 +149,4 @@ sub_censo_design <-
 
 svygini( ~ v6531 , sub_censo_design , na.rm = TRUE )
 
+}
