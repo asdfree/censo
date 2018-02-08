@@ -15,15 +15,15 @@ censo_cat <- censo_cat[ split( seq( nrow( censo_cat ) ) , 1 + sort( seq( nrow( c
 censo_cat <- lodown( "censo" , censo_cat )
 
 if( all( censo_cat$year == 2010 ) ){
-library(lodown)
-# examine all available CENSO microdata files
-censo_cat <-
-	get_catalog( "censo" ,
-		output_dir = file.path( getwd() ) )
 
-# 2010 only
-censo_cat <- subset( censo_cat , year == 2010 )
-# download the microdata to your local computer
+
+
+
+
+
+
+
+
 
 
 library(survey)
