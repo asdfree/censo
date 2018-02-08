@@ -10,7 +10,7 @@ censo_cat <-
 	get_catalog( "censo" ,
 		output_dir = file.path( getwd() ) )
 
-censo_cat <- censo_cat[ split( seq( nrow( censo_cat ) ) , 1 + sort( seq( nrow( censo_cat ) ) %% 20 ) )[[ this_sample_break ]] , ]
+censo_cat <- censo_cat[ split( seq( nrow( censo_cat ) ) , 1 + sort( seq( nrow( censo_cat ) ) %% 55 ) )[[ this_sample_break ]] , ]
 
 censo_cat <- lodown( "censo" , censo_cat )
 
