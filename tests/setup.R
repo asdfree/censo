@@ -14,7 +14,7 @@ censo_cat <- censo_cat[ split( seq( nrow( censo_cat ) ) , 1 + sort( seq( nrow( c
 
 lodown( "censo" , censo_cat )
 
-library(lodown)
+
 # examine all available CENSO microdata files
 censo_cat <-
 	get_catalog( "censo" ,
