@@ -12,9 +12,9 @@ censo_cat <-
 
 censo_cat <- censo_cat[ split( seq( nrow( censo_cat ) ) , 1 + sort( seq( nrow( censo_cat ) ) %% 11 ) )[[ this_sample_break ]] , ]
 
-lodown( "censo" , censo_cat )
+censo_cat <- lodown( "censo" , censo_cat )
 
-
+library(lodown)
 # examine all available CENSO microdata files
 censo_cat <-
 	get_catalog( "censo" ,
@@ -23,7 +23,7 @@ censo_cat <-
 # 2010 only
 censo_cat <- subset( censo_cat , year == 2010 )
 # download the microdata to your local computer
-censo_cat <- lodown( "censo" , censo_cat )
+
 
 library(survey)
 
