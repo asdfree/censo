@@ -10,11 +10,10 @@ censo_cat <-
 	get_catalog( "censo" ,
 		output_dir = file.path( getwd() ) )
 
-censo_cat <- censo_cat[ split( seq( nrow( censo_cat ) ) , 1 + sort( seq( nrow( censo_cat ) ) %% 55 ) )[[ this_sample_break ]] , ]
+censo_cat <- censo_cat[ split( seq( nrow( censo_cat ) ) , 1 + sort( seq( nrow( censo_cat ) ) %% 11 ) )[[ this_sample_break ]] , ]
 
 lodown( "censo" , censo_cat )
 
-if( any( censo_cat$stateab == 'al' & censo_cat$year == 2011 ) ){
 library(lodown)
 # examine all available CENSO microdata files
 censo_cat <-
@@ -24,10 +23,8 @@ censo_cat <-
 # 2010 only
 censo_cat <- subset( censo_cat , year == 2010 )
 # download the microdata to your local computer
+censo_cat <- lodown( "censo" , censo_cat )
 
-
-library(DBI)
-library(RSQLite)
 library(survey)
 
 options( survey.lonely.psu = "adjust" )
@@ -149,4 +146,3 @@ sub_censo_design <-
 
 svygini( ~ v6531 , sub_censo_design , na.rm = TRUE )
 
-}
