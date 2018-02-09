@@ -10,10 +10,10 @@ censo_cat <-
 	get_catalog( "censo" ,
 		output_dir = file.path( getwd() ) )
 
-# skip bahia, minas, and sao paulo because the 2010 files are too big
-censo_cat <- subset( censo_cat , !( state %in% c( 'ba10' , 'mg10' , 'sp110' ) ) )
+# skip bahia, minas, sao paulo, and rio grande do sul because the 2010 files are too big
+censo_cat <- subset( censo_cat , !( state %in% c( 'ba10' , 'mg10' , 'sp110' , 'rs10' ) ) )
 		
-censo_cat <- censo_cat[ split( seq( nrow( censo_cat ) ) , 1 + sort( seq( nrow( censo_cat ) ) %% 52 ) )[[ this_sample_break ]] , ]
+censo_cat <- censo_cat[ split( seq( nrow( censo_cat ) ) , 1 + sort( seq( nrow( censo_cat ) ) %% 51 ) )[[ this_sample_break ]] , ]
 
 censo_cat <- lodown( "censo" , censo_cat )
 

@@ -4,7 +4,7 @@ Title: censo
 Version: 0.1.0
 Author: Anthony Joseph Damico
 Maintainer: Anthony Joseph Damico <ajdamico@gmail.com>
-Description: A continuous integration package, tested on ajdamico/asdfree commit 78d4a988df83a0536c0e6e3ce67b4643edbbc6b0 ajdamico/lodown commit 36701c121b192f21a8d74a4fe62d7b4a397a337e
+Description: A continuous integration package, tested on ajdamico/asdfree commit 3c3d7954e412ec13f7949e1bff85e9bc4cc23020 ajdamico/lodown commit 36701c121b192f21a8d74a4fe62d7b4a397a337e
 License: GPL-3
 Imports: survey, convey, lodown
 Encoding: UTF-8
