@@ -86,8 +86,5 @@ env:
  - this_sample_break=50
  - this_sample_break=51
  - this_sample_break=52
- - this_sample_break=53
- - this_sample_break=54
- - this_sample_break=55
 matrix:
     fast_finish: true
